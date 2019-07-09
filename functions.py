@@ -6,9 +6,9 @@ def initialImport():
     shape = input()
     return shape
 def validImport():
-    print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle" or "circle"): ')
+    print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle" or "sphere"): ')
     shapeName = initialImport()
-    while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle':
+    while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle' and shapeName != 'sphere':
         print('Please enter "triangle", "rectangle" or "circle"')
         shapeName = initialImport()
     return shapeName
