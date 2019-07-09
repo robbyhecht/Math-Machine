@@ -63,3 +63,12 @@ def circle():
         if asset == 'circumference' or asset == 'c':
             c = int(input('Please enter the circumference: '))
             print('The diameter is ' + str(c / math.pi) + '!')
+
+def sphere():
+    calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+    if calc == 'surface area' or calc == 'area' or calc == 's':
+        d = int(input('Enter the diameter: '))
+        print('The surface area is ' + str(4 * math.pi * (d/2)**2) + '!')
+    if calc == 'volume' or calc == 'v':
+        d = int(input('Enter the diameter: '))
+        print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')

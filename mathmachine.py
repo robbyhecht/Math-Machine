@@ -10,3 +10,6 @@ if shape == 'rectangle':
 
 if shape == 'circle':
     circle()
+
+if shape == 'sphere':
+    sphere()
