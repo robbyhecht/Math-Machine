@@ -3,19 +3,20 @@ import math
 # IMPORTS
 
 def initialImport():
-    shape = input('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle" or "circle"): ')
+    shape = input()
     return shape
 def validImport():
+    print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle" or "circle"): ')
     shapeName = initialImport()
     while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle':
-        print("Let's try again!")
+        print('Please enter "triangle", "rectangle" or "circle"')
         shapeName = initialImport()
     return shapeName
 
 # SHAPES
 
 def triangle():
-    calc = input('Do you want to find an angle or a side? Please enter "s" or "a": ')
+    calc = input('Do you want me to find an angle or a side? Please enter "s" or "a": ')
     if calc == 'side' or calc == 's':
         sideType = input('Should i find a side or the hypotenuse? Please enter "s" or "h": ')
         if sideType == 'hypotenuse' or sideType == 'h':
@@ -32,7 +33,7 @@ def triangle():
         print('The other angle is ' + str(180 - a - b) + '!')
 
 def rectangle():
-    calc = input('Do you want to find the area, perimeter or diagonal? Please enter "a", "p" or "d": ')
+    calc = input('Do you want me to find the area, perimeter or diagonal? Please enter "a", "p" or "d": ')
     if calc == 'area' or calc == 'a':
         l = int(input('Enter the length: '))
         w = int(input('Enter the width: '))
@@ -47,7 +48,7 @@ def rectangle():
         print('The diagonal is ' + str(math.sqrt(l*l + w*w)) + '!')
 
 def circle():
-    calc = input('Do you want to find the circumference, area or diameter? Please enter "c", "d" or "a": ')
+    calc = input('Do you want me to find the circumference, area or diameter? Please enter "c", "d" or "a": ')
     if calc == 'circumference' or calc == 'c':
         r = int(input('Enter the radius: '))
         print('The circumference is ' + str(math.pi * (2*r)) + '!')
