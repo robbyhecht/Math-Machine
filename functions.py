@@ -6,10 +6,10 @@ def initialImport():
     shape = input()
     return shape
 def validImport():
-    print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle" or "sphere"): ')
+    print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle", "sphere" or "box"): ')
     shapeName = initialImport()
-    while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle' and shapeName != 'sphere':
-        print('Please enter "triangle", "rectangle" or "circle"')
+    while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle' and shapeName != 'sphere' and shapeName != 'box':
+        print('Please enter "triangle", "rectangle", "circle", "sphere" or "box"')
         shapeName = initialImport()
     return shapeName
 
@@ -72,3 +72,16 @@ def sphere():
     if calc == 'volume' or calc == 'v':
         d = int(input('Enter the diameter: '))
         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
+
+def box():
+    calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+    if calc == 'surface area' or calc == 'area' or calc == 's':
+        l = int(input('Enter the length: '))
+        w = int(input('Enter the width: '))
+        h = int(input('Enter the height: '))
+        print('The surface area is ' + str(2 * (h*w) + 2 * (h*l) + 2 * (w*l)) + '!')
+    if calc == 'volume' or calc == 'v':
+        l = int(input('Enter the length: '))
+        w = int(input('Enter the width: '))
+        h = int(input('Enter the height: '))
+        print('The volume is ' + str(l * w * h) + '!')
