@@ -86,26 +86,38 @@ def rectangle():
         w = int(w)
         print('The diagonal is ' + str(math.sqrt(l*l + w*w)) + '!')
 
-# still need to debug errors from non-integer values in shapes below
-
 def circle():
     calc = input('Do you want me to find the circumference, area or diameter? Please enter "c", "d" or "a": ')
     while calc != 'area' and calc != 'a' and calc != 'diameter' and calc != 'd' and calc != 'circumference' and calc != 'c':
         calc = input('Please enter "c" for circumference, "a" for area, or "d" for diameter: ')
     if calc == 'circumference' or calc == 'c':
-        r = int(input('Enter the radius: '))
+        r = input('Enter the radius: ')
+        while r.isdigit() == False:
+            r = input('Please enter an integer value for radius: ')
+        r = int(r)
         print('The circumference is ' + str(math.pi * (2*r)) + '!')
     if calc == 'area' or calc == 'a':
-        r = int(input('Enter the radius: '))
+        r = input('Enter the radius: ')
+        while r.isdigit() == False:
+            r = input('Please enter an integer value for radius: ')
+        r = int(r)
         print('The area is ' + str(math.pi * (r*r)) + '!')
     if calc == 'diameter' or calc == 'd':
         asset = input('Do you know the area or circumference? Please enter "a" or "c": ')
         if asset == 'area' or asset == 'a':
-            a = int(input('Please enter the area: '))
+            a = input('Please enter the area: ')
+            while a.isdigit() == False:
+                a = input('Please enter an integer value for area: ')
+            a = int(a)
             print('The diameter is ' + str(math.sqrt((a / math.pi)) * 2) + '!')
         if asset == 'circumference' or asset == 'c':
-            c = int(input('Please enter the circumference: '))
+            c = input('Please enter the circumference: ')
+            while c.isdigit() == False:
+                c = input('Please enter an integer value for circumference: ')
+            c = int(c)
             print('The diameter is ' + str(c / math.pi) + '!')
+
+# still need to debug errors from non-integer values in shapes below
 
 def sphere():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
