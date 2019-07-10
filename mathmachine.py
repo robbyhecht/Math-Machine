@@ -1,18 +1,38 @@
 from functions import *
 
-shape = validImport()
-    
-if shape == 'triangle':
-    triangle()
+def shapeCalculation():
+    shape = validImport()
+    if shape == 'triangle':
+        triangle()
+    if shape == 'rectangle':
+        rectangle()
+    if shape == 'circle':
+        circle()
+    if shape == 'sphere':
+        sphere()
+    if shape == 'box':
+        box()
 
-if shape == 'rectangle':
-    rectangle()
+def runProgram():
+    shapeCalculation()
+    request = input('Do you want me to do another calculation? Enter "yes" or "no": ')
+    while request != 'yes' and request != 'no':
+        request = input('Do you want me to do another calculation? Enter "yes" or "no": ')
+    while request == 'yes':
+        runProgram()
+        quit()
+    if request == 'no': 
+        print('Farewell then!')
+        quit()
 
-if shape == 'circle':
-    circle()
+runProgram()
 
-if shape == 'sphere':
-    sphere()
 
-if shape == 'box':
-    box()
+
+    # while request == 'yes' or request == 'Yes' or request == 'YES' or request == 'y' or request == 'Y':
+    #     shapeCalculation()
+    # if request == 'no' or request == 'No' or request == 'NO' or request == 'n' or request == 'N': 
+
+
+
+# make all of this into a function, then put it into another function with a conditional that follows program run, giving the user the option to continue or exit.

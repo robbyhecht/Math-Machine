@@ -3,8 +3,8 @@ import math
 # IMPORTS
 
 def initialImport():
-    shape = input()
-    return shape
+    return input()
+    
 def validImport():
     print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle", "sphere" or "box"): ')
     shapeName = initialImport()
