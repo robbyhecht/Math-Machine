@@ -35,6 +35,8 @@ def triangle():
 
 def rectangle():
     calc = input('Do you want me to find the area, perimeter or diagonal? Please enter "a", "p" or "d": ')
+    while calc != 'area' and calc != 'a' and calc != 'perimeter' and calc != 'p' and calc != 'diagonal' and calc != 'd':
+        calc = input('Please enter "a" for area, "p" for perimeter or "d" for diagonal: ')
     if calc == 'area' or calc == 'a':
         l = int(input('Enter the length: '))
         w = int(input('Enter the width: '))
@@ -50,6 +52,8 @@ def rectangle():
 
 def circle():
     calc = input('Do you want me to find the circumference, area or diameter? Please enter "c", "d" or "a": ')
+    while calc != 'area' and calc != 'a' and calc != 'diameter' and calc != 'd' and calc != 'circumference' and calc != 'c':
+        calc = input('Please enter "c" for circumference, "a" for area, or "d" for diameter: ')
     if calc == 'circumference' or calc == 'c':
         r = int(input('Enter the radius: '))
         print('The circumference is ' + str(math.pi * (2*r)) + '!')
