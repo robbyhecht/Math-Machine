@@ -1,7 +1,7 @@
 # NEED TO DEBUG:
 # disallow user from entering 0 as a length or angle value
 # 2 angles should not be able to add up to or more than 180
-# can user enter floats? (isdigit only works for integers and it's currently handling eliminating negative numbers)
+# 
 
 
 import math
@@ -110,6 +110,8 @@ def circle():
         print('The area is ' + str(math.pi * (r*r)) + '!')
     if calc == 'diameter' or calc == 'd':
         asset = input('Do you know the area or circumference? Please enter "a" or "c": ')
+        while asset != 'area' and asset != 'a' and asset != 'circumference' and asset != 'c':
+            asset = input('Please enter "a" for area or "c" for circumference: ')
         if asset == 'area' or asset == 'a':
             a = input('Please enter the area: ')
             while a.isdigit() == False:
@@ -124,7 +126,7 @@ def circle():
             print('The diameter is ' + str(c / math.pi) + '!')
 
 def sphere():
-    calc = input('Do you want me to find the surface area, volume or diameter? Please enter "s", "v" or "d"')
+    calc = input('Do you want me to find the surface area, volume or diameter? Please enter "s", "v" or "d": ')
     while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v' and calc != 'diameter' and calc != 'd':
         calc = input('Please enter "s" for surface area, "v" for volume or "d" for diameter: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
@@ -140,11 +142,22 @@ def sphere():
         d = int(d)
         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
     if calc == 'diameter' or calc == 'd':
-        v = input('Enter the volume: ')
-        while v.isdigit() == False:
-            v = input('Please enter a positive integer value for diameter: ') 
-        v = int(v)
-        print('The diameter is ' + str((6*(v / math.pi))**(1/3)) + '!')
+        asset = input('Do you know the surface area or volume? Please enter "s" or "v": ')
+        while asset != "surface area" and asset != "area" and asset != "s" and asset != "volume" and asset != "v":
+            asset = input('Please enter "s" for surface area or "v" for volume ')
+        if asset == 'surface area' or asset == 'area' or asset == 's':
+            a = input('Enter the surface area: ')
+            while a.isdigit() == False:
+                a = input('Please enter a positive integer value for volume: ') 
+            a = int(a)
+            print('The diameter is ' + str(math.sqrt(a / math.pi)) + '!')
+
+        if asset == 'volume' or asset == 'v':
+            v = input('Enter the volume: ')
+            while v.isdigit() == False:
+                v = input('Please enter a positive integer value for volume: ') 
+            v = int(v)
+            print('The diameter is ' + str((6*(v / math.pi))**(1/3)) + '!')
 
 def box():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
@@ -178,21 +191,3 @@ def box():
         w = int(w)
         h = int(h)
         print('The volume is ' + str(l * w * h) + '!')
-
-
-# def sphere():
-#     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
-#     while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
-#         calc = input('Please enter "s" for surface area or "v" for volume: ')
-#     if calc == 'surface area' or calc == 'area' or calc == 's':
-#         d = input('Enter the diameter: ')
-#         while d.isdigit() == False:
-#             d = input('Please enter a positive integer value for diameter: ')        
-#         d = int(d)
-#         print('The surface area is ' + str(4 * math.pi * (d/2)**2) + '!')
-#     if calc == 'volume' or calc == 'v':
-#         d = input('Enter the diameter: ')
-#         while d.isdigit() == False:
-#             d = input('Please enter a positive integer value for diameter: ') 
-#         d = int(d)
-#         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
