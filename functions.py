@@ -51,24 +51,42 @@ def triangle():
         b = int(b)
         print('The other angle is ' + str(180 - a - b) + '!')
 
-# still need to debug errors from non-integer values in all shapes other than triangle
-
 def rectangle():
     calc = input('Do you want me to find the area, perimeter or diagonal? Please enter "a", "p" or "d": ')
     while calc != 'area' and calc != 'a' and calc != 'perimeter' and calc != 'p' and calc != 'diagonal' and calc != 'd':
         calc = input('Please enter "a" for area, "p" for perimeter or "d" for diagonal: ')
     if calc == 'area' or calc == 'a':
-        l = int(input('Enter the length: '))
-        w = int(input('Enter the width: '))
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter an integer value for length: ')
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter an integer value for width: ')
+        l = int(l)
+        w = int(w)
         print('The area is ' + str(l*w) + '!')
     if calc == 'perimeter' or calc == 'p':
-        l = int(input('Enter the length: '))
-        w = int(input('Enter the width: '))
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter an integer value for length: ')
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter an integer value for width: ')
+        l = int(l)
+        w = int(w)
         print('The perimeter is ' + str(2*l + 2*w) + '!')
     if calc == 'diagonal' or calc == 'd':
-        l = int(input('Enter the length: '))
-        w = int(input('Enter the width: '))
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter an integer value for length: ')
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter an integer value for width: ')
+        l = int(l)
+        w = int(w)
         print('The diagonal is ' + str(math.sqrt(l*l + w*w)) + '!')
+
+# still need to debug errors from non-integer values in shapes below
 
 def circle():
     calc = input('Do you want me to find the circumference, area or diameter? Please enter "c", "d" or "a": ')
