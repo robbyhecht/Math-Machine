@@ -25,13 +25,3 @@ def runProgram():
     quit()
 
 runProgram()
-
-
-
-    # while request == 'yes' or request == 'Yes' or request == 'YES' or request == 'y' or request == 'Y':
-    #     shapeCalculation()
-    # if request == 'no' or request == 'No' or request == 'NO' or request == 'n' or request == 'N': 
-
-
-
-# make all of this into a function, then put it into another function with a conditional that follows program run, giving the user the option to continue or exit.
