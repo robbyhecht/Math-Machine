@@ -124,9 +124,9 @@ def circle():
             print('The diameter is ' + str(c / math.pi) + '!')
 
 def sphere():
-    calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
-    while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
-        calc = input('Please enter "s" for surface area or "v" for volume: ')
+    calc = input('Do you want me to find the surface area, volume or diameter? Please enter "s", "v" or "d"')
+    while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v' and calc != 'diameter' and calc != 'd':
+        calc = input('Please enter "s" for surface area, "v" for volume or "d" for diameter: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
         d = input('Enter the diameter: ')
         while d.isdigit() == False:
@@ -139,6 +139,12 @@ def sphere():
             d = input('Please enter a positive integer value for diameter: ') 
         d = int(d)
         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
+    if calc == 'diameter' or calc == 'd':
+        v = input('Enter the volume: ')
+        while v.isdigit() == False:
+            v = input('Please enter a positive integer value for diameter: ') 
+        v = int(v)
+        print('The diameter is ' + str((6*(v / math.pi))**(1/3)) + '!')
 
 def box():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
@@ -172,3 +178,21 @@ def box():
         w = int(w)
         h = int(h)
         print('The volume is ' + str(l * w * h) + '!')
+
+
+# def sphere():
+#     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+#     while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
+#         calc = input('Please enter "s" for surface area or "v" for volume: ')
+#     if calc == 'surface area' or calc == 'area' or calc == 's':
+#         d = input('Enter the diameter: ')
+#         while d.isdigit() == False:
+#             d = input('Please enter a positive integer value for diameter: ')        
+#         d = int(d)
+#         print('The surface area is ' + str(4 * math.pi * (d/2)**2) + '!')
+#     if calc == 'volume' or calc == 'v':
+#         d = input('Enter the diameter: ')
+#         while d.isdigit() == False:
+#             d = input('Please enter a positive integer value for diameter: ') 
+#         d = int(d)
+#         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
