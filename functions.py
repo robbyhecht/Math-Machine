@@ -1,3 +1,9 @@
+# NEED TO DEBUG:
+# disallow user from entering 0 as a length or angle value
+# 2 angles should not be able to add up to or more than 180
+# can user enter floats? (isdigit only works for integers and it's currently handling eliminating negative numbers)
+
+
 import math
 
 # IMPORT
