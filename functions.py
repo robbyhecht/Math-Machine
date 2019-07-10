@@ -21,12 +21,12 @@ def triangle():
         while sideType != 'hypotenuse' and sideType != 'h' and sideType != 'side' and sideType != 's':
             sideType = input('Please enter "s" for side or "h" for hypotenuse: ')
         if sideType == 'hypotenuse' or sideType == 'h':
-            a = (input('enter side 1: '))
+            a = input('enter side 1: ')
             while a.isdigit() == False:
-                a = (input('Please enter an integer value for side 1: '))
-            b = (input('enter side 2: '))
+                a = input('Please enter an integer value for side 1: ')
+            b = input('enter side 2: ')
             while b.isdigit() == False:
-                b = (input('Please enter an integer value for side 2: '))
+                b = input('Please enter an integer value for side 2: ')
             a = int(a)
             b = int(b)
             print('The hypotenuse is ' + str(math.sqrt(a*a + b*b)) + '!')
@@ -34,19 +34,19 @@ def triangle():
             c = (input('Enter the hypotenuse: '))
             while c.isdigit() == False:
                   c = (input('Please enter an integer value for the hypotenuse: '))
-            a = (input('Enter the side: '))
+            a = input('Enter the side: ')
             while a.isdigit() == False:
-                a = (input('Please enter an integer value for the side: '))
+                a = input('Please enter an integer value for the side: ')
             c = int(c)
             a = int(a)
             print('The other side is ' + str(math.sqrt(c*c - a*a)) + '!')
     if calc == 'angle' or calc == 'a':
-        a = (input('Enter angle 1: '))
+        a = input('Enter angle 1: ')
         while a.isdigit() == False:
-            a = (input('Please enter an integer value for angle 1: '))
-        b = (input('Enter angle 2: '))
+            a = input('Please enter an integer value for angle 1: ')
+        b = input('Enter angle 2: ')
         while b.isdigit() == False:
-            b = (input('Please enter an integer value for angle 2: '))
+            b = input('Please enter an integer value for angle 2: ')
         a = int(a)
         b = int(b)
         print('The other angle is ' + str(180 - a - b) + '!')
