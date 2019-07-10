@@ -117,30 +117,52 @@ def circle():
             c = int(c)
             print('The diameter is ' + str(c / math.pi) + '!')
 
-# still need to debug errors from non-integer values in shapes below
-
 def sphere():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
     while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
         calc = input('Please enter "s" for surface area or "v" for volume: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
-        d = int(input('Enter the diameter: '))
+        d = input('Enter the diameter: ')
+        while d.isdigit() == False:
+            d = input('Please enter an integer value for diameter: ')        
+        d = int(d)
         print('The surface area is ' + str(4 * math.pi * (d/2)**2) + '!')
     if calc == 'volume' or calc == 'v':
-        d = int(input('Enter the diameter: '))
+        d = input('Enter the diameter: ')
+        while d.isdigit() == False:
+            d = input('Please enter an integer value for diameter: ') 
+        d = int(d)
         print('The volume is ' + str((4/3) * math.pi * ((d/2)**3)) + '!')
 
 def box():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
-    while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
+    while calc != 'surface area' and calc != 'area' and calc != 's' and calc != 'volume' and calc != 'v':
         calc = input('Please enter "s" for surface area or "v" for volume: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
-        l = int(input('Enter the length: '))
-        w = int(input('Enter the width: '))
-        h = int(input('Enter the height: '))
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter an integer value for length: ') 
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter an integer value for width: ')
+        h = input('Enter the height: ')
+        while h.isdigit() == False:
+            h = input('Please enter an integer value for height: ')
+        l = int(l)
+        w = int(w)
+        h = int(h)
         print('The surface area is ' + str(2 * (h*w) + 2 * (h*l) + 2 * (w*l)) + '!')
     if calc == 'volume' or calc == 'v':
-        l = int(input('Enter the length: '))
-        w = int(input('Enter the width: '))
-        h = int(input('Enter the height: '))
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter an integer value for length: ') 
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter an integer value for width: ')
+        h = input('Enter the height: ')
+        while h.isdigit() == False:
+            h = input('Please enter an integer value for height: ')
+        l = int(l)
+        w = int(w)
+        h = int(h)
         print('The volume is ' + str(l * w * h) + '!')
