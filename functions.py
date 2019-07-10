@@ -1,6 +1,6 @@
 import math
 
-# IMPORTS
+# IMPORT
 
 def initialImport():
     print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle", "sphere" or "box"): ')
@@ -18,20 +18,40 @@ def triangle():
         calc = input('Please enter "s" for side or "a" for angle: ')
     if calc == 'side' or calc == 's':
         sideType = input('Should i find a side or the hypotenuse? Please enter "s" or "h": ')
-        while sideType != 'hypotenuse' and sideType != 'h' and sideType != 'side' and sideType != 's'
+        while sideType != 'hypotenuse' and sideType != 'h' and sideType != 'side' and sideType != 's':
             sideType = input('Please enter "s" for side or "h" for hypotenuse: ')
         if sideType == 'hypotenuse' or sideType == 'h':
-            a = int(input('enter side 1: '))
-            b = int(input('enter side 2: '))
+            a = (input('enter side 1: '))
+            while a.isdigit() == False:
+                a = (input('Please enter an integer value for side 1: '))
+            b = (input('enter side 2: '))
+            while b.isdigit() == False:
+                b = (input('Please enter an integer value for side 2: '))
+            a = int(a)
+            b = int(b)
             print('The hypotenuse is ' + str(math.sqrt(a*a + b*b)) + '!')
         if sideType == 'side' or sideType == 's':
-            c = int(input('Enter the hypotenuse: '))
-            a = int(input('Enter the side: '))
+            c = (input('Enter the hypotenuse: '))
+            while c.isdigit() == False:
+                  c = (input('Please enter an integer value for the hypotenuse: '))
+            a = (input('Enter the side: '))
+            while a.isdigit() == False:
+                a = (input('Please enter an integer value for the side: '))
+            c = int(c)
+            a = int(a)
             print('The other side is ' + str(math.sqrt(c*c - a*a)) + '!')
     if calc == 'angle' or calc == 'a':
-        a = int(input('Enter angle 1: '))
-        b = int(input('Enter angle 2: '))
+        a = (input('Enter angle 1: '))
+        while a.isdigit() == False:
+            a = (input('Please enter an integer value for angle 1: '))
+        b = (input('Enter angle 2: '))
+        while b.isdigit() == False:
+            b = (input('Please enter an integer value for angle 2: '))
+        a = int(a)
+        b = int(b)
         print('The other angle is ' + str(180 - a - b) + '!')
+
+# still need to debug errors from non-integer values in all shapes other than triangle
 
 def rectangle():
     calc = input('Do you want me to find the area, perimeter or diagonal? Please enter "a", "p" or "d": ')
@@ -71,6 +91,8 @@ def circle():
 
 def sphere():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+    while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
+        calc = input('Please enter "s" for surface area or "v" for volume: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
         d = int(input('Enter the diameter: '))
         print('The surface area is ' + str(4 * math.pi * (d/2)**2) + '!')
@@ -80,6 +102,8 @@ def sphere():
 
 def box():
     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+    while calc != 'surface area' and calc != 'area' and calc != 'a' and calc != 'volume' and calc != 'v':
+        calc = input('Please enter "s" for surface area or "v" for volume: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
         l = int(input('Enter the length: '))
         w = int(input('Enter the width: '))
