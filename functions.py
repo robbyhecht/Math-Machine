@@ -3,22 +3,23 @@ import math
 # IMPORTS
 
 def initialImport():
-    return input()
-    
-def validImport():
     print('Welcome to Math Machine! Please enter a shape name ("triangle", "rectangle", "circle", "sphere" or "box"): ')
-    shapeName = initialImport()
+    shapeName = input()
     while shapeName != 'triangle' and shapeName != 'rectangle' and shapeName != 'circle' and shapeName != 'sphere' and shapeName != 'box':
         print('Please enter "triangle", "rectangle", "circle", "sphere" or "box"')
-        shapeName = initialImport()
+        shapeName = input()
     return shapeName
 
 # SHAPES
 
 def triangle():
-    calc = input('Do you want me to find an angle or a side? Please enter "s" or "a": ')
+    calc = input('Do you want me to find a side or an angle? Please enter "s" or "a": ')
+    while calc != 's' and calc != 'side' and calc != 'a' and calc != 'angle':
+        calc = input('Please enter "s" for side or "a" for angle: ')
     if calc == 'side' or calc == 's':
         sideType = input('Should i find a side or the hypotenuse? Please enter "s" or "h": ')
+        while sideType != 'hypotenuse' and sideType != 'h' and sideType != 'side' and sideType != 's'
+            sideType = input('Please enter "s" for side or "h" for hypotenuse: ')
         if sideType == 'hypotenuse' or sideType == 'h':
             a = int(input('enter side 1: '))
             b = int(input('enter side 2: '))
