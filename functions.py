@@ -40,15 +40,26 @@ def triangle():
             c = int(c)
             a = int(a)
             print('The other side is ' + str(math.sqrt(c*c - a*a)) + '!')
+
     if calc == 'angle' or calc == 'a':
         a = input('Enter angle 1: ')
-        while a.isdigit() == False:
+        while a.isnumeric() == False or float(a)<=0:
             a = input('Please enter a positive integer value for angle 1: ')
         b = input('Enter angle 2: ')
-        while b.isdigit() == False:
+        while b.isnumeric() == False or float(b)<=0:
             b = input('Please enter a positive integer value for angle 2: ')
-        a = int(a)
-        b = int(b)
+        a = float(a)
+        b = float(b)
+        while a + b >= 180:
+            print('angle 1 + angle 2 must be less than 180!')
+            a = input('Enter angle 1: ')
+            while a.isnumeric() == False or float(a)<=0:
+                a = input('Please enter a positive integer value for angle 1: ')
+            b = input('Enter angle 2: ')
+            while b.isnumeric() == False or float(b)<=0:
+                b = input('Please enter a positive integer value for angle 2: ')
+            a = float(a)
+            b = float(b)
         print('The other angle is ' + str(180 - a - b) + '!')
 
 def rectangle():
