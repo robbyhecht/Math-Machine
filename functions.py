@@ -1,9 +1,3 @@
-# NEED TO DEBUG:
-# disallow user from entering 0 as a length or angle value
-# 2 angles should not be able to add up to or more than 180
-# 
-
-
 import math
 
 # IMPORT
@@ -160,9 +154,9 @@ def sphere():
             print('The diameter is ' + str((6*(v / math.pi))**(1/3)) + '!')
 
 def box():
-    calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
-    while calc != 'surface area' and calc != 'area' and calc != 's' and calc != 'volume' and calc != 'v':
-        calc = input('Please enter "s" for surface area or "v" for volume: ')
+    calc = input('Do you want me to find the surface area, volume or diagonal? Please enter "s", "v" or "d": ')
+    while calc != 'surface area' and calc != 'area' and calc != 's' and calc != 'volume' and calc != 'v' and calc != 'diagonal' and calc != 'd':
+        calc = input('Please enter "s" for surface area, "v" for volume or "d" for diagonal: ')
     if calc == 'surface area' or calc == 'area' or calc == 's':
         l = input('Enter the length: ')
         while l.isdigit() == False:
@@ -191,3 +185,50 @@ def box():
         w = int(w)
         h = int(h)
         print('The volume is ' + str(l * w * h) + '!')
+    if calc == 'diagonal' or calc == 'd':
+        l = input('Enter the length: ')
+        while l.isdigit() == False:
+            l = input('Please enter a positive integer value for length: ') 
+        w = input('Enter the width: ')
+        while w.isdigit() == False:
+            w = input('Please enter a positive integer value for width: ')
+        h = input('Enter the height: ')
+        while h.isdigit() == False:
+            h = input('Please enter a positive integer value for height: ')
+        l = int(l)
+        w = int(w)
+        h = int(h)
+        print('The diagonal is ' + str(math.sqrt((math.sqrt(l**2 + w**2))**2 + h**2)) + '!')
+
+# def box():
+#     calc = input('Do you want me to find the surface area or volume? Please enter "s" or "v"')
+#     while calc != 'surface area' and calc != 'area' and calc != 's' and calc != 'volume' and calc != 'v':
+#         calc = input('Please enter "s" for surface area or "v" for volume: ')
+#     if calc == 'surface area' or calc == 'area' or calc == 's':
+#         l = input('Enter the length: ')
+#         while l.isdigit() == False:
+#             l = input('Please enter a positive integer value for length: ') 
+#         w = input('Enter the width: ')
+#         while w.isdigit() == False:
+#             w = input('Please enter a positive integer value for width: ')
+#         h = input('Enter the height: ')
+#         while h.isdigit() == False:
+#             h = input('Please enter a positive integer value for height: ')
+#         l = int(l)
+#         w = int(w)
+#         h = int(h)
+#         print('The surface area is ' + str(2 * (h*w) + 2 * (h*l) + 2 * (w*l)) + '!')
+#     if calc == 'volume' or calc == 'v':
+#         l = input('Enter the length: ')
+#         while l.isdigit() == False:
+#             l = input('Please enter a positive integer value for length: ') 
+#         w = input('Enter the width: ')
+#         while w.isdigit() == False:
+#             w = input('Please enter a positive integer value for width: ')
+#         h = input('Enter the height: ')
+#         while h.isdigit() == False:
+#             h = input('Please enter a positive integer value for height: ')
+#         l = int(l)
+#         w = int(w)
+#         h = int(h)
+#         print('The volume is ' + str(l * w * h) + '!')
